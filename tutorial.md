@@ -21,3 +21,17 @@ GitHub also allows for relatively simple websites to be created using this same 
 # Wait, what's Markdown?
 
 Markdown is a simple markup language for text, intended to let you write readable plain text in a standard way that various interpreters (like Jekyll) can turn into the HTML that you're used to seeing on the web. If you scroll to the top of this page and click "Raw" you'll see the Markdown version of what you're reading. Hopefully you'll still find it readable, if not as polished. You can find out more about Markdown [here](https://daringfireball.net/projects/markdown/).
+
+# Fork this, I'm out
+
+In the language of Git, a fork (noun) is a copied version of a repository that diverges from the original. To fork (verb) is to create such a version. Yes, all of those jokes you're thinking of have been, and will continue to be made.
+
+Right now, you're going to fork this repository, so that you have a version of it that's all your own. Scroll up to the top of this page and click "Fork". Now you'll have a copy of this repository all to yourself. Once you've done that come back to this page. Protip: holding down Ctrl (Windows + Linux) or Command (Mac) and clicking your browser's back button will go back, but in a new tab.
+
+# Changing files on your fork
+
+Now that you have your own copy of this repository, you can make whatever changes you like. Try it out on the `README.md` file. Click on the file, then click "Edit" towards the top right. Change where the tutorial will be presented, credit yourself, credit me, credit the Flying Spaghetti Monster, do whatever you like.
+
+Once you've made the changes that you want to make, scroll to the bottom. You'll see some other text entry boxes. These are for your commit message, describing the changes you've made. The first box is for the main description, which should be very concise, short enough to fit comfortably on one line. I don't say as concise as possible, because for historians "as concise as possible" may still be several pages. Save that for the second box, the extended description. This is where you can go into as much detail as you like about the changes you've made. By default, when you're editing your own repositories, you make your changes directly to what you're working on. Another option is to create a pull request, which lets you or someone else make a decision about whether to incorporate those changes later. We'll go into a bit more detail about this later. For now, just click "Commit changes"
+
+Now that you've changed a file, you can see how you've affected its history. Click "History" at the top of the page. Here you'll see when I created the file, and your change to it. For a longer history, you can look at [the history for this tutorial]().
