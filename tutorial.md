@@ -56,6 +56,8 @@ We could have set up the username and password beforehand, but...
 1. That wouldn't be any fun
 2. I want to demonstrate that charging into new things until you run headfirst into a problem is a viable strategy here. Git gives you the information that you need to resolve the problem, and once you do that, you're back on track. If you're doing anything with code and it breaks, most of the time it will give you information on how to resolve the problem. The response and solution won't always be this straightforward, but it's often actionable.
 
+Anyways, now that you've cloned the repository, let's go there in the terminal. Your terminal is "pointing" at a single location, like having a folder open in Windows Explorer or Finder. Instead of clicking on a folder to move there, in terminal, we use the command `cd`, followed by the place we want to go. So in this case, type `cd github_tutorial`, since git clones repos into a folder with the repo name.
+
 # Branches in Git
 
 Branching in Git is a powerful and versatile capability. It allows you to maintain separate versions of your code in the same repository, so you can solve problems in a separate environment (un-break things without breaking everything else) or try out new ideas (while keeping a version of your files safe from your brilliant ideas). The default branch that repositories start on is called "master", and it's usually a good idea to have this as the most stable and canonical branch. You can always merge your fixes and new ideas back into "master" once you're sure that they don't break anything.
