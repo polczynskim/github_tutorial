@@ -35,3 +35,23 @@ Now that you have your own copy of this repository, you can make whatever change
 Once you've made the changes that you want to make, scroll to the bottom. You'll see some other text entry boxes. These are for your commit message, describing the changes you've made. The first box is for the main description, which should be very concise, short enough to fit comfortably on one line. I don't say as concise as possible, because for historians "as concise as possible" may still be several pages. Save that for the second box, the extended description. This is where you can go into as much detail as you like about the changes you've made. By default, when you're editing your own repositories, you make your changes directly to what you're working on. Another option is to create a pull request, which lets you or someone else make a decision about whether to incorporate those changes later. We'll go into a bit more detail about this later. For now, just click "Commit changes"
 
 Now that you've changed a file, you can see how you've affected its history. Click "History" at the top of the page. Here you'll see when I created the file, and your change to it. For a longer history, you can look at [the history for this tutorial](https://github.com/jaguillette/github_tutorial/commits/master/tutorial.md).
+
+# Make it local, clone this repository
+
+Something that GitHub is great at facilitating is keeping track of changes across multiple instances of the same repository. You can add a "remote" to an existing local git repo, or you can clone a repository from GitHub, which will come with the information about the remote version of the repo.
+
+This is easier demonstrated than explained, so let's clone this repository locally. If you're on a Mac, or if you've downloaded and installed the software from [git-scm.com](http://git-scm.com), follow along through your Terminal (Mac) or Git Bash (Windows).
+
+Go to the root of this repository by clicking on the repository name towards the top of the page. There, click "Clone or Download", click the URL in the text box, and copy it. Open a Terminal (Mac) or Git Bash (Windows), type `git clone ` (Don't forget the space at the end!) and paste the URL you copied (Cmd + Shift + V on Mac or Shift + Insert on Windows, as the normal Ctrl shortcuts do different things in terminals). Hit enter, and let it download!
+
+At this point, if you're using Git for the first time, your command won't run, because Git wants to know who you are. Every commit you make is associated with your name and email, so if you haven't entered this information, Git will want it before it does anything else. This is independent from GitHub, and is necessary even if you only have a local Git repository. To set this up, enter the following commands with your own information instead of the example info:
+
+    git config --global user.name "John Doe"
+    git config --global user.email johndoe@example.com
+
+Now, you still need to clone that repository. Rather than copying the url, typing the git clone command, and pasting the url in again, you can cycle through previous commands with the up and down arrow keys on your keyboard. Press up until you see the clone command again, then hit enter to have it run properly.
+
+We could have set up the username and password beforehand, but...
+
+# That wouldn't be any fun
+# I want to demonstrate that charging into new things until you run headfirst into a problem is a viable strategy here. Git gives you the information that you need to resolve the problem, and once you do that, you're back on track. If you're doing anything with code and it breaks, most of the time it will give you information on how to resolve the problem. The response and solution won't always be this straightforward, but it's often actionable.
