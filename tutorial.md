@@ -62,10 +62,58 @@ Anyways, now that you've cloned the repository, let's go there in the terminal. 
 
 Branching in Git is a powerful and versatile capability. It allows you to maintain separate versions of your code in the same repository, so you can solve problems in a separate environment (un-break things without breaking everything else) or try out new ideas (while keeping a version of your files safe from your brilliant ideas). The default branch that repositories start on is called "master", and it's usually a good idea to have this as the most stable and canonical branch. You can always merge your fixes and new ideas back into "master" once you're sure that they don't break anything.
 
-GitHub also uses this branching capability to power websites through [GitHub Pages](https://pages.github.com/). GitHub Pages use a branch, which is always called gh-pages. This repository actually has a gh-pages branch, with all of the files needed to set up a GitHub Pages site (You don't need to clone this repo every time you need a site, GitHub has [a process](https://pages.github.com/) (scroll down on linked page) for making new project sites).
+GitHub also uses this branching capability to power websites through [GitHub Pages](https://pages.github.com/). GitHub Pages use a branch, which is always called gh-pages. This repository actually has a gh-pages branch, with all of the files needed to set up a GitHub Pages site. When you make a new GitHub Pages site, you can easily make a single static front page from any of the templates available. However, the more powerful option is to make use of Jekyll, a Ruby Gem that GitHub uses to transform Markdown files into website pages (Ruby is a programming language, gems are libraries of code for that language that can be used to do cooler things easily). I've set up the gh-pages branch of this site to use Jekyll, and there are a variety of Jekyll themes that you can use to do the same, with some initial setup.
 
 Let's switch to this branch. To appreciate what happens when you switch branches, type `ls` and hit enter. This command lists the files and folders in the directory that you're currently in. You should see `README.md`, `LICENSE.txt`, and `tutorial.md` file. Now type `git checkout gh-pages`, hit enter, then run `ls` again. Now you'll see a bunch of different files and folders! You can `git checkout master` if you want to convince yourself that the other files are still available, just go back to the gh-pages branch after.
 
 # Editing local files
 
 Now, let's make some local changes, creat a commit, and push that commit back up to GitHub. To start, let's open a file explorer in the current directory. On windows, use `explorer .`, and on Mac use `open .`. Now you'll see all of the files in the repository in an interface you're probably a bit more familiar with.
+
+The site is currently populated with sample content from the Jekyll theme I started with ([Hyde](https://github.com/poole/hyde)). Let's modify the About page and push that change to the site. Again, it doesn't really matter how, but maybe add some fun facts, or change the ones already there. Let's also make a new file in this folder called `new-page.md` with a text editor like Notepad. Start this page with some basic information in a format called YAML. [YAML](http://yaml.org/) is an odd duck, and you don't need to know much about it to use it here. What you can do is copy the first four lines from `about.md` and change the title to "New Page". On a new line after the `---` line, you can start writing whatever Markdown you like, like a heading (`# New Page`) or some text.
+
+Once you've made these changes with your favorite text editor (which will eventually be [SublimeText](https://www.sublimetext.com/)), we'll make a commit. First we have to "stage" the commit, to tell Git which files we want to include in this change. Let's see what we can do by running `git status` from the terminal. Here you'll see what files have had changes made to them. You'll see modified files, like `about.md`, as well as new, "untracked" files, like `new-page.md`. It's possible to just add all new and modified files, but we'll do them individually for now. `git add` is the command to stage a file for a commit, which is to say include the file in the change you're going to make. So `git add about.md` will stage `about.md` and `git add new-page.md` will add `new-page.md`.
+
+Let's run `git status` again to see what we've done. You'll see now that there are "changes staged for commit". Since these look good, let's do the commit. The command for this is `git commit -m "the commit message"`. To add an extended description to the message, just hit enter twice before closing the quotation marks and then type to your heart's content before closing the quotation marks and hitting enter again.
+
+# Pushing commits to GitHub
+
+We have the commit now, so there's a record of the changes we've made. However, these changes are local, not on GitHub. This won't do, so we must "push" the changes up. The command for this in our case is `git push origin gh-pages`. `git push` is the base command, `origin` specifies the remote repository that changes are pushed to and pulled from, which is called "origin" by default, and `gh-pages` specifies the branch we're pushing to. If we were editing the `tutorial.md` file on the branch called "master", the command would be `git push origin master`. But for now, just run `git push origin gh-pages`. You'll be prompted for your GitHub credentials, so enter your username and then your password. Your password won't show up as you type for security reasons, but it's still accepting input.
+
+With your changes pushed to GitHub, you'll have a website at _yourusername_.github.io/github_tutorial with the changes you've made. Congratulations!
+
+# Pulling commits from GitHub
+
+As the last thing we'll actually do with this repository, let's make another change on GitHub, then pull that change to our local repository. In the root of your GitHub repository on the default branch, "master" (github.com/_yourusername_/github_tutorial), create a new file by clicking "Create new file". Name it `done.md`, and type some congratulations to yourself for making it this far. You can use the default commit message on GitHub for creating a new file and just click "Commit changes" at the bottom of the page.
+
+Now, back in the terminal window you've been using, switch to the default branch, "master" by running `git checkout master`. Run `git pull origin master` to pull the changes you made online, and run `ls` to make sure the new file is there. Congratulations! You've performed the tasks that comprise the majority of all work with Git! With this knowledge, you can clone project repositories, create repositories for your writing and track your changes, and even maintain a free website. Pat yourself on the back!
+
+# But that's not all!
+
+No more code to run, but there are some more useful features of GitHub that are worth mentioning.
+
+## File Rendering
+
+GitHub automatically renders certain file types, like GeoJson for mapping or STL for 3D models. There are probably some more that I don't know about, and they're constantly adding things to the site, so it's worth a quick search if there's some data that you want to quickly preview.
+
+## We've got Issues
+
+GitHub provides issue tracking for repositories that anyone can add. This provides a way for people who notice a problem with something in the repository to point it out, even if they don't know how to fix it. Issues can be tagged, discussed, and assigned to individuals. When the issue is fixed, it can be closed. Issues can also be referenced and closed by commit messages. For a more in-depth discussion, check out [the documentation](https://guides.github.com/features/issues/).
+
+## Wikis
+
+You can add a knowledge base for your project through GitHub's built-in wiki system. Especially for larger projects that use GitHub, it can be very useful to document information about the project and how to use or interact with it, so GitHub provides a way to do it. For more on wikis, here's some more [documentation](https://help.github.com/articles/about-github-wikis/).
+
+## Pull Requests: Candy from strangers
+
+A "pull request" is a way for someone who isn't the owner of a repository to contribute to it. While anyone can fork a repository, only the owner and people they specify can modify it. A pull request is a request to make a specific change to a file or files in the repository, and can be approved or denied by the owner or their designees. For more about pull requests, there's [some documentation](https://help.github.com/articles/using-pull-requests/), and also [a discussion](https://help.github.com/articles/using-pull-requests/) on StackOverflow, which is where pretty much everyone who writes code figures things out.
+
+## Credit where credit is due, automatically
+
+Every commit and every issue created or resolved counts as a contribution to GitHub, and these contributions are tracked automatically. You can see who's contributing how much to a project over time by looking at the Graphs for any given repository. The graphs are described more fully in [their introductory blog post](https://github.com/blog/1093-introducing-the-new-github-graphs).
+
+## Last but not least, stars
+
+Starring a repository indicates to others that you like a repository, and adds it to a collection of starred repositories that bookmarks the repository for you for later. Stars are also a great way to judge how popular a repository is. [This page](https://github.com/search?q=stars:%3E1&s=stars&type=Repositories) can show you the most popular repositories on GitHub right now, but a more useful way to look at stars is a way to sort search results. If you're looking for something in particular, sorting by stars can let you know which projects in your search results are most popular. This is useful for things like finding Wordpress or Jekyll themes that are popular with GitHub users, for example.
+
+![The more you know](https://cdn.theatlantic.com/assets/media/img/mt/2014/09/The_More_You_Know/lead_large.png)
