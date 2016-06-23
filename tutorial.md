@@ -55,3 +55,11 @@ We could have set up the username and password beforehand, but...
 
 1. That wouldn't be any fun
 2. I want to demonstrate that charging into new things until you run headfirst into a problem is a viable strategy here. Git gives you the information that you need to resolve the problem, and once you do that, you're back on track. If you're doing anything with code and it breaks, most of the time it will give you information on how to resolve the problem. The response and solution won't always be this straightforward, but it's often actionable.
+
+# Branches in Git
+
+Branching in Git is a powerful and versatile capability. It allows you to maintain separate versions of your code in the same repository, so you can solve problems in a separate environment (un-break things without breaking everything else) or try out new ideas (while keeping a version of your files safe from your brilliant ideas). The default branch that repositories start on is called "master", and it's usually a good idea to have this as the most stable and canonical branch. You can always merge your fixes and new ideas back into "master" once you're sure that they don't break anything.
+
+GitHub also uses this branching capability to power websites through [GitHub Pages](https://pages.github.com/). GitHub Pages use a branch, which is always called gh-pages. This repository actually has a gh-pages branch, with all of the files needed to set up a GitHub Pages site (You don't need to clone this repo every time you need a site, GitHub has [a process](https://pages.github.com/) (scroll down on linked page) for making new project sites).
+
+Let's switch to this branch. To appreciate what happens when you switch branches, type `ls` and hit enter. This command lists the files and folders in the directory that you're currently in. You should see `README.md`, `LICENSE.txt`, and `tutorial.md` file. Now type `git checkout gh-pages`, hit enter, then run `ls` again. Now you'll see a bunch of different files and folders! You can `git checkout master` if you want to convince yourself that the other files are still available, just go back to the gh-pages branch after.
