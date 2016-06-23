@@ -63,3 +63,7 @@ Branching in Git is a powerful and versatile capability. It allows you to mainta
 GitHub also uses this branching capability to power websites through [GitHub Pages](https://pages.github.com/). GitHub Pages use a branch, which is always called gh-pages. This repository actually has a gh-pages branch, with all of the files needed to set up a GitHub Pages site (You don't need to clone this repo every time you need a site, GitHub has [a process](https://pages.github.com/) (scroll down on linked page) for making new project sites).
 
 Let's switch to this branch. To appreciate what happens when you switch branches, type `ls` and hit enter. This command lists the files and folders in the directory that you're currently in. You should see `README.md`, `LICENSE.txt`, and `tutorial.md` file. Now type `git checkout gh-pages`, hit enter, then run `ls` again. Now you'll see a bunch of different files and folders! You can `git checkout master` if you want to convince yourself that the other files are still available, just go back to the gh-pages branch after.
+
+# Editing local files
+
+Now, let's make some local changes, creat a commit, and push that commit back up to GitHub. To start, let's open a file explorer in the current directory. On windows, use `explorer .`, and on Mac use `open .`. Now you'll see all of the files in the repository in an interface you're probably a bit more familiar with.
